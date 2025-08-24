@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>康鑫达医疗报告审核系统 - 移动端测试</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 医疗报告专用样式 */
+        .medical-report {
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .medical-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 2px;
+        }
+        .header-left {
+            flex: 2;
+            background-color: rgb(135, 206, 250);
+            color: white;
+            padding: 3px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        .header-right {
+            flex: 1;
+            background-color: rgb(135, 206, 250);
+            color: white;
+            padding: 3px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .medical-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 10px;
+        }
+
+        .medical-table th,
+        .medical-table td {
+            border: 1px solid #E5E7EB;
+            padding: 4px 2px;
+            text-align: center;
+        }
+
+        .medical-table th {
+            background-color: #F3F4F6;
+            font-weight: bold;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .medical-table {
+                font-size: 8px;
+            }
+            
+            .medical-table th,
+            .medical-table td {
+                padding: 3px 1px;
+            }
+        }
+    </style>
+</head>
+<body class="medical-report bg-gray-50">
+    <div class="container mx-auto px-2 py-1 max-w-full min-h-screen flex flex-col">
+        <div class="flex-1">
+            <!-- 顶部标题栏 -->
+        <div class="medical-header">
+            <!-- 左侧横条：报告名称 -->
+            <div class="header-left">
+                <h1 class="text-xs font-bold">康鑫达_甘达健+糖组六项结果审核</h1>
+            </div>
+            <!-- 右侧横条：日期信息 -->
+            <div class="header-right">
+                <div style="font-size: 10px;" class="mb-1">
+                    <span class="font-medium">收样日期：</span>
+                    <span>2025-08-21</span>
+                </div>
+                <div style="font-size: 10px;">
+                    <span class="font-medium">检测日期：</span>
+                    <span>2025-08-22</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据表格区域 -->
+        <div class="w-full overflow-x-auto bg-white rounded-lg shadow-sm border border-gray-200" style="margin-bottom: 2px;">
+            <table class="medical-table w-full min-w-full">
+                <thead>
+                    <tr class="bg-gray-50">
+                        <th class="text-xs font-bold text-gray-700">NO</th>
+                        <th class="text-xs font-bold text-gray-700">P1</th>
+                        <th class="text-xs font-bold text-gray-700">P2</th>
+                        <th class="text-xs font-bold text-gray-700">P3</th>
+                        <th class="text-xs font-bold text-gray-700">P4</th>
+                        <th class="text-xs font-bold text-gray-700">P5</th>
+                        <th class="text-xs font-bold text-gray-700">P6</th>
+                        <th class="text-xs font-bold text-gray-700">P7</th>
+                        <th class="text-xs font-bold text-gray-700">P8</th>
+                        <th class="text-xs font-bold text-gray-700">P9</th>
+                        <th class="text-xs font-bold text-gray-700">结果</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    <tr class="hover:bg-gray-50">
+                        <td class="text-xs text-gray-900">D2502168_1_A09_01.fsa</td>
+                        <td class="text-xs text-gray-900">2.55</td>
+                        <td class="text-xs text-gray-900">0.42</td>
+                        <td class="text-xs text-gray-900">1.23</td>
+                        <td class="text-xs text-gray-900">3.67</td>
+                        <td class="text-xs text-gray-900">0.89</td>
+                        <td class="text-xs text-gray-900">2.14</td>
+                        <td class="text-xs text-gray-900">1.56</td>
+                        <td class="text-xs text-gray-900">0.73</td>
+                        <td class="text-xs text-gray-900">2.91</td>
+                        <td class="text-xs text-gray-900">32 29_29 24 37 28 23.48|47</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 图片区域 -->
+        <div class="w-full bg-white rounded-lg shadow-sm border border-gray-200 p-1" style="margin-bottom: 2px;">
+            <div class="flex justify-center">
+                <img src="6812778942107_G09_07.jpg" alt="" class="max-w-full h-auto border border-gray-200 rounded" style="max-height: 100px;" />
+            </div>
+        </div>
+
+        <!-- 风险评估结果表格 -->
+        <div class="w-full bg-white rounded-lg shadow-sm border border-gray-200" style="margin-bottom: 2px;">
+            <div class="p-1">
+
+                <div class="overflow-x-auto">
+                    <table class="medical-table w-full min-w-full">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="text-xs font-bold text-gray-700">样本ID</th>
+                                <th class="text-xs font-bold text-gray-700">肝脏健康</th>
+                                <th class="text-xs font-bold text-gray-700">食管癌风险</th>
+                                <th class="text-xs font-bold text-gray-700">胃癌风险</th>
+                                <th class="text-xs font-bold text-gray-700">胰癌风险</th>
+                                <th class="text-xs font-bold text-gray-700">结直肠癌</th>
+                                <th class="text-xs font-bold text-gray-700">血液肿瘤风险</th>
+                                <th class="text-xs font-bold text-gray-700">免疫年龄评估</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr class="hover:bg-gray-50">
+                                <td class="text-xs text-gray-900">SDAA24D01654</td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">32</span>
+                                        <span class="px-1 py-0.5 rounded-full text-xs bg-green-100 text-green-600">低风险</span>
+                                    </div>
+                                </td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">29</span>
+                                        <span class="px-1 py-0.5 rounded-full text-xs bg-green-100 text-green-600">低风险</span>
+                                    </div>
+                                </td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">24</span>
+                                        <span class="px-1 py-0.5 rounded-full text-xs bg-green-100 text-green-600">低风险</span>
+                                    </div>
+                                </td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">37</span>
+                                        <span class="px-1 py-0.5 rounded-full text-xs bg-yellow-100 text-yellow-600">中风险</span>
+                                    </div>
+                                </td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">28</span>
+                                        <span class="px-1 py-0.5 rounded-full text-xs bg-green-100 text-green-600">低风险</span>
+                                    </div>
+                                </td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">23</span>
+                                        <span class="px-1 py-0.5 rounded-full text-xs bg-green-100 text-green-600">低风险</span>
+                                    </div>
+                                </td>
+                                <td class="text-xs">
+                                    <div class="flex flex-col items-center">
+                                        <span class="font-semibold text-gray-900">48</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        
+        <!-- 底部信息栏 - 固定在最底部 -->
+        <div class="w-full bg-gray-50 border-t border-gray-200 p-1 mt-auto">
+            <div class="text-xs text-gray-700">
+                <span class="font-medium text-gray-800">推荐人：</span><span>万海波，</span>
+                <span class="font-medium text-gray-800">客户信息：</span><span>左凌 男 43岁，</span>
+                <span class="font-medium text-gray-800">诊断：</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

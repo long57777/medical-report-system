@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>康鑫达医疗报告审核系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .medical-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+        .header-left {
+            flex: 2;
+            background-color: rgb(135, 206, 250);
+            color: white;
+            padding: 4px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+        }
+        .header-right {
+            flex: 1;
+            background-color: rgb(135, 206, 250);
+            color: white;
+            padding: 4px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .medical-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 11px;
+        }
+        .medical-table th, .medical-table td {
+            border: 1px solid #E5E7EB;
+            padding: 6px 4px;
+            text-align: center;
+        }
+        .medical-table th {
+            background-color: #F3F4F6;
+            font-weight: bold;
+        }
+        .risk-low { background: #ECFDF5; color: #10B981; padding: 2px 6px; border-radius: 8px; font-size: 10px; }
+        .risk-medium { background: #FFFBEB; color: #F59E0B; padding: 2px 6px; border-radius: 8px; font-size: 10px; }
+        .chart-area { height: 150px; background: linear-gradient(45deg, rgba(59,130,246,0.2) 30%, rgba(59,130,246,0.8) 50%, rgba(59,130,246,0.3) 70%); border: 1px solid #E5E7EB; border-radius: 4px; display: flex; align-items: center; justify-content: center; position: relative; }
+        @media (max-width: 768px) {
+            .medical-table { font-size: 9px; }
+            .medical-table th, .medical-table td { padding: 4px 2px; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-1 max-w-6xl min-h-screen flex flex-col">
+        <div class="flex-1">
+            <!-- 顶部标题栏 -->
+        <div class="medical-header">
+            <!-- 左侧横条：报告名称 -->
+            <div class="header-left">
+                <h1 class="text-base font-bold">康鑫达_甘达健+糖组六项结果审核</h1>
+            </div>
+            <!-- 右侧横条：日期信息 -->
+            <div class="header-right">
+                <div class="text-xs mb-1">
+                    <span class="font-medium">收样日期：</span>
+                    <span>2025-08-21</span>
+                </div>
+                <div class="text-xs">
+                    <span class="font-medium">检测日期：</span>
+                    <span>2025-08-22</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据表格 -->
+        <div class="bg-white rounded-lg shadow border overflow-x-auto" style="margin-bottom: 2px;">
+            <table class="medical-table w-full">
+                <thead>
+                    <tr>
+                        <th>NO</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th>
+                        <th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>康鑫达结果</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-family: monospace; font-size: 9px;">D2502168_1_A09_01.fsa</td>
+                        <td>2.55</td><td>0.42</td><td>1.23</td><td>3.67</td><td>0.89</td>
+                        <td>2.14</td><td>1.56</td><td>0.73</td><td>2.91</td>
+                        <td style="font-family: monospace; font-size: 9px;">32 29_29 24 37 28 23.48|47</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 图片区域 -->
+        <div class="bg-white rounded-lg shadow border p-2" style="margin-bottom: 2px;">
+            <div class="flex justify-center">
+                <img src="6812778942107_G09_07.jpg" alt="" class="max-w-full h-auto border border-gray-200 rounded" style="max-height: 200px;" />
+            </div>
+        </div>
+
+        <!-- 风险评估 -->
+        <div class="bg-white rounded-lg shadow border p-2" style="margin-bottom: 2px;">
+
+            <div class="overflow-x-auto">
+                <table class="medical-table w-full">
+                    <thead>
+                        <tr>
+                            <th>样本ID</th><th>肝脏健康</th><th>食管癌</th><th>胃癌</th>
+                            <th>胰癌</th><th>结直肠癌</th><th>血液肿瘤</th><th>免疫年龄</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-family: monospace;">SDAA24D01654</td>
+                            <td><div><strong>32</strong><br><span class="risk-low">低风险</span></div></td>
+                            <td><div><strong>29</strong><br><span class="risk-low">低风险</span></div></td>
+                            <td><div><strong>24</strong><br><span class="risk-low">低风险</span></div></td>
+                            <td><div><strong>37</strong><br><span class="risk-medium">中风险</span></div></td>
+                            <td><div><strong>28</strong><br><span class="risk-low">低风险</span></div></td>
+                            <td><div><strong>23</strong><br><span class="risk-low">低风险</span></div></td>
+                            <td><div><strong>48</strong></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        </div>
+        
+        <!-- 底部信息 - 固定在最底部 -->
+        <div class="bg-gray-50 border rounded-lg p-2 mt-auto">
+            <div class="text-xs">
+                <span><strong>推荐人：</strong>万海波，</span>
+                <span><strong>客户信息：</strong>左凌 男 43岁，</span>
+                <span><strong>诊断：</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('康鑫达医疗报告审核系统已加载');
+        
+        // 简单的交互功能
+        document.querySelectorAll('button').forEach(btn => {
+            btn.onclick = () => alert(`${btn.textContent} 功能已触发`);
+        });
+    </script>
+</body>
+</html>

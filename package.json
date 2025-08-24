@@ -1,0 +1,27 @@
+{
+  "name": "medical-report-system",
+  "version": "1.0.0",
+  "description": "康鑫达医疗报告审核系统 - 专业的医疗检测报告展示平台",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "medical",
+    "report",
+    "healthcare",
+    "mobile-responsive",
+    "html5"
+  ],
+  "author": "Medical Report System",
+  "license": "MIT",
+  "homepage": "https://yourusername.github.io/repositoryname/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/repositoryname.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/repositoryname/issues"
+  }
+}
